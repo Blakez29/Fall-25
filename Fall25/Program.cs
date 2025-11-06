@@ -1,5 +1,14 @@
-using Microsoft.AspNetCore;
+using Fall25;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//var config_builder = new ConfigurationBuilder()
+//    .SetBasePath(Directory.GetCurrentDirectory())
+//    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+//    .AddEnvironmentVariables(); // Optional, but common
+//IConfiguration configuration = config_builder.Build();
+
+CONFIGURATION.BIND(builder.Configuration, args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,4 +34,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Run();
+await app.RunAsync();

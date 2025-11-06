@@ -1,9 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Core.System.Windows.Forms" Version="1.0.0-alpha7"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="appsettings.json">
+      <CopyToOutputDirectory>CopyIfNewer</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="appsettings.Development.json">
+      <CopyToOutputDirectory>CopyIfNewer</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 
 </Project>
